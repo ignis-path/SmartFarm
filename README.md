@@ -44,37 +44,8 @@ Fornecer uma solução para pessoas que moram em apartamentos ou têm rotina ape
 
 ## 🏗️ Arquitetura do Sistema
 ------
-┌─────────────────────────────────────────────────────────┐
-│                   SMARTFARM - FLUXO DE DADOS             │
-├─────────────────────────────────────────────────────────┤
-│                                                           │
-│  ┌──────────────────────────────────────┐               │
-│  │       ESP32 - SERVIDOR HTTP LOCAL    │               │
-│  ├──────────────────────────────────────┤               │
-│  │                                       │               │
-│  │  📷 Câmera OVC7670                   │               │
-│  │      ↓                                │               │
-│  │  🤖 TFLite (IA - Plant Village)      │               │
-│  │      ↓                                │               │
-│  │  📊 Análise (Doença? Saúde?)         │               │
-│  │      ↓                                │               │
-│  │  📡 Envia APENAS Resultados via WiFi │               │
-│  │                                       │               │
-│  │  + Sensores:                         │               │
-│  │    • DHT22 (Temp/Umidade)            │               │
-│  │    • Umidade do Solo                 │               │
-│  │    • Sensor LDR                      │               │
-│  │                                       │               │
-│  │  + Atuadores:                        │               │
-│  │    • Bomba d'água (Automática)       │               │
-│  │    • LED RGB (Status)                │               │
-│  │    • Buzzer (Alertas)                │               │
-│  │    • Display OLED (Local)            │               │
-│  │                                       │               │
-│  └──────────────────────────────────────┘               │
-│              ▲                     ▼                     │
-│              │                WiFi HTTP                 │
-│              │                     ▼                    │
+# ARQUITERUA DE HARDWARE
+ESP32-CAM -- SENSOR DE CHUVA -- SENSOR DHT22 -- Bomba d'Água -- SENSOR DE UMIDADE DE SOLO --> ESP32(SERVIDOR) --> Wifi-HTTP
 ---
 
 ## 🛠️ Stack Tecnológico
