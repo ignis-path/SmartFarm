@@ -35,47 +35,15 @@ Fornecer uma solução para pessoas que moram em apartamentos ou têm rotina ape
 ✅ Analisar saúde da planta com IA  
 ✅ Notificar usuário sobre mudanças  
 ✅ Notificar baixo nível do reservatório  
-✅ Notificar baixa umidade da terra  
-✅ Prever período de coleta de frutos  
+✅ Notificar baixa umidade da terra    
 ✅ Visualizar status em tempo real  
 ✅ Adicionar/Editar plantas (SmartFarms)  
 ✅ Visualizar planta ao vivo pela câmera  
-✅ Indicar cuidados agrícolas  
 
 ---
 
 ## 🏗️ Arquitetura do Sistema
-┌─────────────────────────────────────────────────────┐
-│                  SMARTFARM IoT                       │
-├─────────────────────────────────────────────────────┤
-│                                                       │
-│  ┌──────────────┐      ┌──────────────┐             │
-│  │   HARDWARE   │      │      IA      │             │
-│  │              │      │              │             │
-│  │  • ESP32     │──►   │  TFLite      │             │
-│  │  • Sensores  │      │  (Doenças)   │             │
-│  │  • Câmera    │      │              │             │
-│  │  • Bomba     │      └──────────────┘             │
-│  └──────────────┘             │                     │
-│         │                      │                     │
-│         └──────────┬───────────┘                     │
-│                    ▼                                 │
-│          ┌──────────────────┐                       │
-│          │    BACKEND       │                       │
-│          │   (Python/API)   │                       │
-│          │   (PostgreSQL)   │                       │
-│          └──────────────────┘                       │
-│                    │                                 │
-│                    ▼                                 │
-│          ┌──────────────────┐                       │
-│          │   APP MOBILE     │                       │
-│          │    (Flutter)     │                       │
-│          │   (Notificações) │                       │
-│          └──────────────────┘                       │
-│                                                       │
-└─────────────────────────────────────────────────────┘
-
-
+???
 
 ---
 
@@ -83,8 +51,8 @@ Fornecer uma solução para pessoas que moram em apartamentos ou têm rotina ape
 
 | Camada | Tecnologia |
 |--------|-----------|
-| **Hardware** | ESP32, DHT22, Sensor Umidade, Câmera OVC7670, Bomba d'água |
-| **Firmware** | Arduino C++ |
+| **Hardware** | ESP32, DHT22, Sensor de Chuva, ESP32-CAM, Bomba d'água |
+| **Firmware** | C/Arduino |
 | **Machine Learning** | TensorFlow Lite, Plant Village Dataset |
 | **Backend** | Python (FastAPI/Flask), PostgreSQL |
 | **Aplicativo** | Flutter (iOS/Android) |
@@ -97,12 +65,13 @@ Fornecer uma solução para pessoas que moram em apartamentos ou têm rotina ape
 ### 🖥️ Processamento
 - **ESP32** - Microcontrolador principal com WiFi
 - **Ponte H L298** - Controle da bomba d'água
-
+-  **ESP32-CAM** - Capturar Imagens
+-  
 ### 📡 Sensores
 - **DHT22** - Temperatura e umidade do ar
 - **Sensor de Umidade do Solo** - Anticorrosivo
 - **Sensor LDR** - Detecção de luminosidade
-- **Câmera OVC7670** - Captura de imagens das folhas
+
 
 ### 🎛️ Atuadores & Indicadores
 - **Bomba d'água** - Rega automática
@@ -156,7 +125,6 @@ Fornecer uma solução para pessoas que moram em apartamentos ou têm rotina ape
 - 🔔 Água baixa
 - 🔔 Doença detectada
 - 🔔 Umidade crítica
-- 🔔 Pronto para colheita
 
 ---
 
@@ -212,7 +180,6 @@ Este projeto está alinhado com:
 - 📱 **Aplicativo** - Desenvolver app mobile
 - 💻 **Tecnologia** - IoT e sistemas embarcados
 - 🚀 **Inovação** - IA aplicada à agricultura
-- 🌾 **Agronegócio** - Automação agrícola
 
 ---
 
@@ -266,44 +233,15 @@ SmartFarm/
 ✅ Sem armazenamento de dados sensíveis  
 
 ---
-
-## 🤝 Como Contribuir
-
-Gostaria de contribuir? Ótimo!
-
-1. Faça um **Fork** do projeto
-2. Crie uma **branch** para sua feature (`git checkout -b feature/MinhaFeature`)
-3. **Commit** suas mudanças (`git commit -m 'Adicionar MinhaFeature'`)
-4. **Push** para a branch (`git push origin feature/MinhaFeature`)
-5. Abra um **Pull Request**
-
-Veja [CONTRIBUTING.md](CONTRIBUTING.md) para mais detalhes.
-
----
-
-## 📝 Licença
-
-Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ---
 
 ## 👥 Autor
 
-**[Seu Nome]**
+**----**
 
-- 🐙 GitHub: [@seu_usuario](https://github.com/seu_usuario)
-- 📧 Email: seu.email@exemplo.com
-- 💼 LinkedIn: [seu_perfil](https://linkedin.com/in/seu_perfil)
-
----
-
-## 📞 Contato & Suporte
-
-Tem dúvidas ou sugestões?
-
-- 💬 Abra uma [Issue](../../issues)
-- 📧 Envie um email
-- 🐦 Me siga no Twitter
+- 🐙 GitHub: ---
+- 📧 Email: ---
+- 💼 LinkedIn:--
 
 ---
 
