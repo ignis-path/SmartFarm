@@ -66,7 +66,7 @@ ESP32-CAM -- SENSOR DE CHUVA -- SENSOR DHT22 -- Bomba d'Água -- SENSOR DE UMIDA
 ### 🖥️ Processamento
 - **ESP32** - Microcontrolador principal com WiFi
 - **Ponte H L298** - Controle da bomba d'água
--  **ESP32-CAM** - Capturar Imagens
+- **ESP32-CAM** - Capturar Imagens
   
 ### 📡 Sensores
 - **DHT22** - Temperatura e umidade do ar
@@ -76,8 +76,6 @@ ESP32-CAM -- SENSOR DE CHUVA -- SENSOR DHT22 -- Bomba d'Água -- SENSOR DE UMIDA
 
 ### 🎛️ Atuadores & Indicadores
 - **Bomba d'água** - Rega automática
-- **LED RGB 5050** - Indicador de status (16 bits)
-- **Buzzer** - Alertas sonoros
 - **Display OLED** - Informações locais
 - **Motor RC** - Controle de movimento (opcional)
 
@@ -86,7 +84,6 @@ ESP32-CAM -- SENSOR DE CHUVA -- SENSOR DHT22 -- Bomba d'Água -- SENSOR DE UMIDA
 - Capacitor 1000µF
 - Resistores 100kΩ e 10kΩ
 - Regulador de tensão
-- Push buttons
 - Fios jumper
 
 ---
