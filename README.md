@@ -43,8 +43,38 @@ Fornecer uma solução para pessoas que moram em apartamentos ou têm rotina ape
 ---
 
 ## 🏗️ Arquitetura do Sistema
-???
-
+------
+┌─────────────────────────────────────────────────────────┐
+│                   SMARTFARM - FLUXO DE DADOS             │
+├─────────────────────────────────────────────────────────┤
+│                                                           │
+│  ┌──────────────────────────────────────┐               │
+│  │       ESP32 - SERVIDOR HTTP LOCAL    │               │
+│  ├──────────────────────────────────────┤               │
+│  │                                       │               │
+│  │  📷 Câmera OVC7670                   │               │
+│  │      ↓                                │               │
+│  │  🤖 TFLite (IA - Plant Village)      │               │
+│  │      ↓                                │               │
+│  │  📊 Análise (Doença? Saúde?)         │               │
+│  │      ↓                                │               │
+│  │  📡 Envia APENAS Resultados via WiFi │               │
+│  │                                       │               │
+│  │  + Sensores:                         │               │
+│  │    • DHT22 (Temp/Umidade)            │               │
+│  │    • Umidade do Solo                 │               │
+│  │    • Sensor LDR                      │               │
+│  │                                       │               │
+│  │  + Atuadores:                        │               │
+│  │    • Bomba d'água (Automática)       │               │
+│  │    • LED RGB (Status)                │               │
+│  │    • Buzzer (Alertas)                │               │
+│  │    • Display OLED (Local)            │               │
+│  │                                       │               │
+│  └──────────────────────────────────────┘               │
+│              ▲                     ▼                     │
+│              │                WiFi HTTP                 │
+│              │                     ▼                    │
 ---
 
 ## 🛠️ Stack Tecnológico
@@ -66,7 +96,7 @@ Fornecer uma solução para pessoas que moram em apartamentos ou têm rotina ape
 - **ESP32** - Microcontrolador principal com WiFi
 - **Ponte H L298** - Controle da bomba d'água
 -  **ESP32-CAM** - Capturar Imagens
--  
+  
 ### 📡 Sensores
 - **DHT22** - Temperatura e umidade do ar
 - **Sensor de Umidade do Solo** - Anticorrosivo
